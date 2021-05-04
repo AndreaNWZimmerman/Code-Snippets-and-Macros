@@ -1,0 +1,21 @@
+/*RECORD START TIME OF PROGRAM*/
+data program_time;
+start=datetime();
+run;
+
+/**YOUR SAS CODE GOES HERE**/
+
+/*RECORD END OF PROGRAM, CALCULATE RUNTIME, PRINT TO LOG*/
+data program_time;
+set program_time;
+end=datetime();
+runtime=end-start;
+format start end datetime18. runtime time11.2;
+
+put "*************************************";
+put "*************************************";
+put "program run time was " runtime;
+put "*************************************";
+put "*************************************";
+
+run;
